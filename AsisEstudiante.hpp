@@ -1,8 +1,6 @@
-#pragma onc;
+#pragma once
 
 #include "Asistente.hpp"
-#include <iostream>
-using namespace std;
 
 class AsisEstudiante: public Asistente{
     private:

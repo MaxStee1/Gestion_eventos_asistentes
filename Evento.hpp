@@ -23,6 +23,5 @@ class Evento{
         void addAsistente(Asistente* asistente);
         void verAsistentes();
         int edadPromedio();
-
         virtual void ver();
 };

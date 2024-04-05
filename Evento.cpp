@@ -35,11 +35,17 @@ void Evento::verAsistentes(){
 }
 
 int Evento::edadPromedio(){
-    int edadTotal = 0;
-    for(Asistente* a : asistentes){
-        edadTotal += a->getEdad();
-    }
+    if(asistentes.size() == 0){
+        cout<<"NO HAY ASISTENTES PARA ESTE EVENTO"<<endl;
+        return 0;
+    }else{
+        int edadTotal = 0;
+        for(Asistente* a : asistentes){
+            edadTotal += a->getEdad();
+        }
 
-    int edadPromedio = edadTotal / asistentes.size();
-    return edadPromedio;   
+        int edadPromedio = edadTotal / asistentes.size();
+        return edadPromedio;
+    }
+           
 }

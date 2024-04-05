@@ -1,7 +1,6 @@
 #pragma once
+
 #include "Evento.hpp"
-#include <iostream>
-using namespace std;
 
 class EvDeportivo: public Evento{
     private:
