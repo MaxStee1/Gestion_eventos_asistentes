@@ -9,4 +9,5 @@ class AsisEstudiante: public Asistente{
         AsisEstudiante(string nombre, int edad, string carrera);
         string getCarrera();
         void ver();
+        string getAtributo();
 };

@@ -9,4 +9,5 @@ class EvDeportivo: public Evento{
         EvDeportivo(string nombre, int duracion, string ubicacion, string deporte);
         string getDeporte();
         void ver();
+        string getAtributo();
 };

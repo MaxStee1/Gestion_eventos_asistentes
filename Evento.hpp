@@ -24,4 +24,5 @@ class Evento{
         void verAsistentes();
         int edadPromedio();
         virtual void ver();
+        virtual string getAtributo();
 };

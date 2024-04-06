@@ -9,4 +9,5 @@ class AsisProfesional : public Asistente{
         AsisProfesional(string nombre, int edad, string empresa);
         string getEmpresa();
         void ver();
+        string getAtributo();
 };

@@ -14,5 +14,6 @@ class Asistente{
         void setNombre(string nom);
         void setEdad(int edad);
         virtual void ver();
+        virtual string getAtributo();
 
 };

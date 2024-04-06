@@ -14,3 +14,8 @@ void AsisEstudiante::ver(){
     Asistente::ver();
     cout<<" | Carrera: "<<this->carerra;
 }
+
+string AsisEstudiante::getAtributo()
+{
+    return getCarrera();
+}

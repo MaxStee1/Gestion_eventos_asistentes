@@ -16,3 +16,8 @@ void Asistente::setEdad(int edad){ this->edad = edad; }
 void Asistente::ver(){
     cout<<" -Nombre: "<<this->nombre<<" | Edad: "<<this->edad;
 }
+
+string Asistente::getAtributo()
+{
+    return "";
+}

@@ -14,3 +14,8 @@ void AsisProfesional::ver(){
     Asistente::ver();
     cout<<" | Empresa: "<<this->empresa;
 }
+
+string AsisProfesional::getAtributo()
+{
+    return getEmpresa();
+}

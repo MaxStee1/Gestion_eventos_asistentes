@@ -14,3 +14,8 @@ void AsisEspecial::ver(){
     Asistente::ver();
     cout<<" | Ocupacion: "<<this->ocupacion;
 }
+
+string AsisEspecial::getAtributo()
+{
+    return getOcupacion();
+}

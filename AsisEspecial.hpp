@@ -10,5 +10,6 @@ class AsisEspecial : public Asistente{
         AsisEspecial(string nombre, int edad,string ocupacion);
         string getOcupacion();
         void ver();
-
+        string getAtributo();
+        
 };

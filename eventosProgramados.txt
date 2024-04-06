@@ -1,17 +1,14 @@
 EVENTO.DEPORTIVO:ATP 500,120,Lima,Tenis
-4
 ASISTENTE.PROFESIONAL:Lucas Soto,40,NASA
 ASISTENTE.NORMAL:Ignacio Rodriguez,28,
 ASISTENTE.ESPECIAL:Johan Messi,29,chef
 ASISTENTE.ESTUDIANTE:Antonio Soto,21,Arquitectura
-
+|
 EVENTO.CONCIERTO:Kilo,120,Santiago,Trap
-2
 ASISTENTE.NORMAL:Benjamin Malebran,23
 ASISTENTE.ESPECIAL:German Garmendia,35,Youtuber
-
+|
 EVENTO.ACADEMICO:Mas alla de lo humano,90,Ovalle,Inteligencia Artificial
-5
 ASISTENTE.PROFESIONAL:Valeria Garcia,32,Open IA
 ASISTENTE.NORMAL:Martina Lopez, 25
 ASISTENTE.ESPECIAL:Pablo Gomez,40,Filosofo

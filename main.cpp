@@ -6,6 +6,44 @@
 
 using namespace std;
 
+
+void escribirEventoEnArchivo(Evento* evento, string tipoEvento) {
+    ofstream archivo("eventosProgramados.txt", ios::app); // Abrir el archivo en modo de adjuntar (append)
+    if (archivo.is_open()) {
+        archivo << "|"<<endl;
+        archivo << "EVENTO." << tipoEvento <<":";
+        archivo << evento->getNombre() << ",";
+        archivo << evento->getDuracion() << ",";
+        archivo << evento->getUbicacion() << ",";
+        archivo << evento->getAtributo();
+        // Dependiendo del tipo de evento, puedes escribir más detalles aquí
+        archivo << endl; // Separador entre eventos
+        archivo.close(); // Cerrar el archivo después de escribir
+    } else {
+        cout << "No se pudo abrir el archivo eventos.txt" << endl;
+    }
+}
+
+void escribirAsistenteEnArchivo(Asistente* asistente,string tipo) {
+    ofstream archivo("eventosProgramados.txt", ios::app); // Abrir el archivo en modo de adjuntar (append)
+    if (archivo.is_open()) {
+        archivo << "ASISTENTE." << tipo << ":";
+        archivo << asistente->getNombre() << ",";
+        if(tipo == "NORMAL"){
+            archivo << asistente->getEdad();
+        }else{
+            archivo << asistente->getEdad() << ",";
+            archivo << asistente->getAtributo();
+        }
+        
+        // Dependiendo del tipo de asistente, puedes escribir más detalles aquí
+        archivo << endl; // Separador entre asistentes
+        archivo.close(); // Cerrar el archivo después de escribir
+    } else {
+        cout << "No se pudo abrir el archivo asistentes.txt" << endl;
+    }
+}
+
 void verEventos(list<Evento*> eventos){
     int cont=1;
     for(Evento* evento : eventos){
@@ -50,54 +88,67 @@ void crearEvento(list<Evento*>& eventos){
         cout<<"tema: ";
         getline(cin, tema); 
         eventos.push_back(new EvAcademico(nombre,duracion,ubicacion,tema));
+        escribirEventoEnArchivo(eventos.back(), "ACADEMICO");
         break;
 
     case 2:
         cout<<"genero musical: ";
         getline(cin, genero); 
         eventos.push_back(new EvConcierto(nombre,duracion,ubicacion,genero));
+        escribirEventoEnArchivo(eventos.back(), "CONCIERTO");
         break;
     
     case 3:
         cout<<"deporte: ";
         getline(cin, deporte);
         eventos.push_back(new EvDeportivo(nombre,duracion,ubicacion,deporte));
+        escribirEventoEnArchivo(eventos.back(), "DEPORTIVO");
         break;
 
     default:
         cout<<"opcion no disponible!!"<<endl;
         break;
     }
+    
 }
 
 void agregar(Evento* evento,int tipoAsistente,string nombre, int edad){
 
     string ocupacion="",carrera="",empresa="";
+    Asistente* asistente;
 
     switch (tipoAsistente){
         case 1: // Asistente especial
             cout<<"Ocupacion: ";
             cin.ignore();
             getline(cin, ocupacion); 
-            evento->addAsistente(new AsisEspecial(nombre,edad,ocupacion));
+            asistente = new AsisEspecial(nombre,edad,ocupacion);
+            evento->addAsistente(asistente);
+            escribirAsistenteEnArchivo(asistente,"ESPECIAL");
             break;
             
         case 2: // Estudiante
             cout<<"Carrera: ";
             cin.ignore(); 
             getline(cin, carrera); 
-            evento->addAsistente(new AsisEstudiante(nombre,edad,carrera));
+            asistente = new AsisEstudiante(nombre,edad,carrera);
+            evento->addAsistente(asistente);
+            escribirAsistenteEnArchivo(asistente,"ESTUDIANTE");
             break;
 
         case 3: // Profesional
             cout<<"Empresa: ";
             cin.ignore();
             getline(cin, empresa); 
-            evento->addAsistente(new AsisProfesional(nombre,edad,empresa));
+            asistente = new AsisProfesional(nombre,edad,empresa);
+            evento->addAsistente(asistente);
+            escribirAsistenteEnArchivo(asistente,"EMPRESA");
             break;
             
         case 4: // Normal
-            evento->addAsistente(new Asistente(nombre, edad));
+            asistente = new Asistente(nombre,edad);
+            evento->addAsistente(asistente);
+            escribirAsistenteEnArchivo(asistente,"NORMAL");
             cout<<"Asistente agregado"<<endl;
             break;
 

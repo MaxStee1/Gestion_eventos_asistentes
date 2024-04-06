@@ -18,3 +18,8 @@ void EvConcierto:: ver(){
     cout<<" | Genero musical: " << this->generoMusical;
     cout<<"\nTipo: Concierto"<<endl;
 }
+
+string EvConcierto::getAtributo()
+{
+    return getGenero();
+}

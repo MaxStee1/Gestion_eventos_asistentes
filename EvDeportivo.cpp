@@ -14,3 +14,8 @@ void EvDeportivo::ver(){
     cout<<" | Deporte: "<<this-> deporte;
     cout<<"\nTipo: Evento deportivo"<<endl;
 }
+
+string EvDeportivo::getAtributo()
+{
+    return getDeporte();
+}

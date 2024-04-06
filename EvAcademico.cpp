@@ -14,3 +14,8 @@ void EvAcademico::ver(){
     cout<<" | Tema: "<<this-> tema;
     cout<<"\nTipo: Evento Academico"<<endl;
 }
+
+string EvAcademico::getAtributo()
+{
+    return getTema();
+}

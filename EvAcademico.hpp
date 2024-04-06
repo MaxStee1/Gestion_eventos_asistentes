@@ -9,4 +9,5 @@ class EvAcademico: public Evento{
         EvAcademico(string nombre, int duracion, string ubicacion, string tema);
         string getTema();
         void ver();
+        string getAtributo();
 };

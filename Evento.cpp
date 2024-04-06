@@ -22,6 +22,11 @@ void Evento::ver(){
     cout<<"Nombre: "<<this->nombreEvento<<" | Duracion: "<<this->duracion<<" m | Ubicacion: "<<this->ubicacion;
 }
 
+string Evento::getAtributo()
+{
+    return "";
+}
+
 void Evento::addAsistente(Asistente* asistente){
     this->asistentes.push_back(asistente);
 }

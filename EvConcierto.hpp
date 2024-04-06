@@ -10,4 +10,5 @@ class EvConcierto: public Evento {
         string getGenero();
         void setGenero(string genero);
         void ver();
+        string getAtributo();
 };
