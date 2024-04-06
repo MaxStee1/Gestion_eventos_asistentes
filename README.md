@@ -117,21 +117,23 @@ La encargada de cargar los datos de un archivo es la clase *GestorEventos*
 *el archivo tiene el siguiente formato:*
 
 EVENTO.*TIPO*:*nombre*,*duracion*,*ubicacion*,*atributo unico*  
-*numero que indica el total de asistentes*  
 ASISTENTE.*TIPO*:*nombre*,*edad*,*atributo unico*  
 ASISTENTE.*NORMAL*:*nombre*,*edad* (en caso de que sea de tipo normal)  
-
+|  
 EVENTO.*TIPO*:*nombre*,*duracion*,*ubicacion*,*atributo unico*  
-*numero que indica el total de asistentes*  
 ASISTENTE.*TIPO*:*nombre*,*edad*,*atributo unico*  
+___
+## Carga de datos hacia un archivo
 
+Los metodos encargados de escribir los datos a un archivo son
+*escribirEventoEnArchivo* y *escribirAsistenteEnArchivo*
 
 
 ___
 ## Compilacion
 ### usa el siguiente comando para compilar el programa:
 
-g++ Asistente.cpp Evento.cpp AsisEstudiante.cpp AsisProfesional.cpp AsisEspecial.cpp EvConcierto.cpp EvDeportivo.cpp EvAcademico.cpp main.cpp -o run
+g++ Asistente.cpp Evento.cpp AsisEstudiante.cpp AsisProfesional.cpp AsisEspecial.cpp EvConcierto.cpp EvDeportivo.cpp EvAcademico.cpp GestorEventos.cpp GenerarEventos.cpp main.cpp -o run
 
 ### para ejecutarlo utiliza el siguiente:
 
