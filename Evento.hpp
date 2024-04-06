@@ -25,4 +25,7 @@ class Evento{
         int edadPromedio();
         virtual void ver();
         virtual string getAtributo();
+        list<Asistente*> getAsistentes();
+        Asistente* asistenteMayor();
+        Asistente* asistenteMenor();
 };

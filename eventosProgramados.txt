@@ -13,4 +13,4 @@ ASISTENTE.PROFESIONAL:Valeria Garcia,32,Open IA
 ASISTENTE.NORMAL:Martina Lopez, 25
 ASISTENTE.ESPECIAL:Pablo Gomez,40,Filosofo
 ASISTENTE.ESTUDIANTE:Diego Gonzalez,20,Ingenieria de Software
-ASISTENTE.ESTUDIANTE:Sofía Martinez,22,Ciencias de la Computacion
+ASISTENTE.ESTUDIANTE:Sofia Martinez,22,Ciencias de la Computacion

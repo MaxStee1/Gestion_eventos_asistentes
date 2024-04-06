@@ -27,6 +27,36 @@ string Evento::getAtributo()
     return "";
 }
 
+list<Asistente *> Evento::getAsistentes()
+{
+    return this->asistentes;
+}
+
+Asistente* Evento::asistenteMayor(){
+    int min = 0;
+    Asistente* mayor;
+    for(Asistente* a : this->asistentes){
+        if(a->getEdad() > min){
+            min = a->getEdad();
+            mayor = a;
+        }
+    }
+    return mayor;
+}
+
+Asistente* Evento::asistenteMenor(){
+    int max = 150;
+    Asistente* menor;
+    for(Asistente* a : this->asistentes){
+        if(a->getEdad() < max){
+            max = a->getEdad();
+            menor = a;
+        }
+    }
+    return menor;
+}
+
+
 void Evento::addAsistente(Asistente* asistente){
     this->asistentes.push_back(asistente);
 }
@@ -40,17 +70,12 @@ void Evento::verAsistentes(){
 }
 
 int Evento::edadPromedio(){
-    if(asistentes.size() == 0){
-        cout<<"NO HAY ASISTENTES PARA ESTE EVENTO"<<endl;
-        return 0;
-    }else{
-        int edadTotal = 0;
-        for(Asistente* a : asistentes){
-            edadTotal += a->getEdad();
-        }
-
-        int edadPromedio = edadTotal / asistentes.size();
-        return edadPromedio;
+    int edadTotal = 0;
+    for(Asistente* a : asistentes){
+        edadTotal += a->getEdad();
     }
-           
+
+    int edadPromedio = edadTotal / asistentes.size();
+    return edadPromedio; 
+          
 }

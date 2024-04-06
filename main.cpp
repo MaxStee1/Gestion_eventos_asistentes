@@ -16,7 +16,6 @@ void escribirEventoEnArchivo(Evento* evento, string tipoEvento) {
         archivo << evento->getDuracion() << ",";
         archivo << evento->getUbicacion() << ",";
         archivo << evento->getAtributo();
-        // Dependiendo del tipo de evento, puedes escribir más detalles aquí
         archivo << endl; // Separador entre eventos
         archivo.close(); // Cerrar el archivo después de escribir
     } else {
@@ -35,8 +34,6 @@ void escribirAsistenteEnArchivo(Asistente* asistente,string tipo) {
             archivo << asistente->getEdad() << ",";
             archivo << asistente->getAtributo();
         }
-        
-        // Dependiendo del tipo de asistente, puedes escribir más detalles aquí
         archivo << endl; // Separador entre asistentes
         archivo.close(); // Cerrar el archivo después de escribir
     } else {
@@ -210,17 +207,26 @@ void informes(list<Evento*> eventos){
         evento->ver();
         cout<<endl;
         evento->verAsistentes();
-        cout<<"\nEdad Pormedio del evento: "<<evento->edadPromedio()<<endl;
-        cout<<endl;
+        if(evento->getAsistentes().size() != 0){
+            cout<<"\nEdad Pormedio del evento: "<<evento->edadPromedio()<<endl;
+            Asistente* a = evento->asistenteMayor();
+            cout<<"Asistente de mayor edad: "<< a->getNombre()<<" "<<a->getEdad()<<endl;
+            a = evento->asistenteMenor();
+            cout<<"Asistente de menor edad: "<< a->getNombre()<<" "<<a->getEdad()<<endl;
+            cout<<endl;
+        }else{
+            cout<<"NO HAY DATOS PARA MAS INFORMACION"<<endl;
+        }
+        
     }
 }
 
 void menu(list<Evento*>& eventos){
     int opcion;
     cout<<"\n*** MENU ***"<<endl;
-    cout<<"[1] crear evento"<<endl;
-    cout<<"[2] registrar asistentes"<<endl;
-    cout<<"[3] Lista de Asistentes"<<endl;
+    cout<<"[1] Crear evento"<<endl;
+    cout<<"[2] Registrar asistentes"<<endl;
+    cout<<"[3] Lista de asistentes"<<endl;
     cout<<"[4] Informes"<<endl;
     cout<<" >";
     cin>>opcion;
@@ -250,9 +256,9 @@ void menu(list<Evento*>& eventos){
         }
 
         cout<<"\n*** MENU ***"<<endl;
-        cout<<"[1] crear evento"<<endl;
-        cout<<"[2] registrar asistentes"<<endl;
-        cout<<"[3] Lista de Asistentes"<<endl;
+        cout<<"[1] Crear evento"<<endl;
+        cout<<"[2] Registrar asistentes"<<endl;
+        cout<<"[3] Lista de asistentes"<<endl;
         cout<<"[4] Informes"<<endl;
         cout<<"[0] SALIR"<<endl;
         cout<<" >";
