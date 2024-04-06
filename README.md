@@ -17,10 +17,10 @@ ___
 
 El programa se compone principalmete de eventos y asistentes, y sus diferentes derivaciones. 
 
-**Eventos**  
+### **Eventos**  
 *Todos los eventos tienen en comun los siguientes atributos: nombre, duracion, ubicacion*  
 
-#### TIPOS DE EVENTOS
+##### TIPOS DE EVENTOS
 - **Evento Academico**  
   atributo unico: *tema*
 
@@ -30,10 +30,10 @@ El programa se compone principalmete de eventos y asistentes, y sus diferentes d
 - **Evento Deportivo**  
   atributo unico: *deporte*
 
-**Asistentes**  
+### **Asistentes**  
 *Todos los asistentes tienen en comun los siguientes atributos: nombre, edad*
 
-#### TIPOS DE ASISTENTES
+##### TIPOS DE ASISTENTES
 - **Especial**  
   atributo unico: *ocupacion*  
     
@@ -112,7 +112,7 @@ Evento [Academico]: {nombre:"Aventuras Cosmicas";duracion:"120";ubicacion:"La Se
 ___
 ## Carga de datos desde un archivo
 
-La encargada de cargar los archivos es la clase *GestorEventos*
+La encargada de cargar los datos de un archivo es la clase *GestorEventos*
 
 *el archivo tiene el siguiente formato:*
 
