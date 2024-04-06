@@ -49,6 +49,9 @@ El programa se compone principalmete de eventos y asistentes, y sus diferentes d
 
 ___
 ## Objetos creados
+
+Los objetos se cargan desde la clase *GenerarEventos*  
+
 Evento [Concierto]: {nombre:"Rocki";duracion:"180";ubicacion:"Coquimbo";generoMusical:"Rock"}  
 | asistente [Especial]: {nombre:"Mick Jagger";edad:"53";ocupacion:"Musico"}  
 | asistente [Especial]: {nombre:"Keith Richards";edad:"59";ocupacion:"Musico"}  
@@ -105,6 +108,23 @@ Evento [Academico]: {nombre:"Aventuras Cosmicas";duracion:"120";ubicacion:"La Se
 | asistente [Estudiante]: {nombre:"Cristobal Rivera";edad:"21";carrera:"Ingenieria en Computacion"}  
 | asistente [Profesional]: {nombre:"Roberto De Luque";edad:"30";empresa:"NASA"}  
 | asistente [Especial]: {nombre:"Juan Garcia";edad:"35";ocupacion:"Influencer"}  
+
+___
+## Carga de datos desde un archivo
+
+La encargada de cargar los archivos es la clase *GestorEventos*
+
+*el archivo tiene el siguiente formato:*
+
+EVENTO.*TIPO*:*nombre*,*duracion*,*ubicacion*,*atributo unico*  
+*numero que indica el total de asistentes*  
+ASISTENTE.*TIPO*:*nombre*,*edad*,*atributo unico*  
+ASISTENTE.*NORMAL*:*nombre*,*edad* (en caso de que sea de tipo normal)  
+
+EVENTO.*TIPO*:*nombre*,*duracion*,*ubicacion*,*atributo unico*  
+*numero que indica el total de asistentes*  
+ASISTENTE.*TIPO*:*nombre*,*edad*,*atributo unico*  
+
 
 
 ___
